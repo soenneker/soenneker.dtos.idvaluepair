@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Soenneker.Attributes.PublicOpenApiObject;
 
 namespace Soenneker.Dtos.IdValuePair;
@@ -12,9 +13,11 @@ public record IdValuePair
 {
     [Required]
     [JsonPropertyName("id")]
-    public string Id { get; init; } = null!;
+    [JsonProperty("id")]
+    public required string Id { get; init; } = null!;
 
     [Required]
     [JsonPropertyName("value")]
-    public string Value { get; init; } = null!;
+    [JsonProperty("value")]
+    public required string Value { get; init; } = null!;
 }
