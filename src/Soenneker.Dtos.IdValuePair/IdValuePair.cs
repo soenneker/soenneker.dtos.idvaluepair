@@ -11,11 +11,17 @@ namespace Soenneker.Dtos.IdValuePair;
 [PublicOpenApiObject]
 public record IdValuePair
 {
+    /// <summary>
+    /// Gets or sets id.
+    /// </summary>
     [Required]
     [JsonPropertyName("id")]
     [JsonProperty("id")]
     public required string Id { get; init; } = null!;
 
+    /// <summary>
+    /// Gets or sets value.
+    /// </summary>
     [Required]
     [JsonPropertyName("value")]
     [JsonProperty("value")]
