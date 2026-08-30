@@ -6,13 +6,13 @@ using Soenneker.Attributes.PublicOpenApiObject;
 namespace Soenneker.Dtos.IdValuePair;
 
 /// <summary>
-/// A minimal Record type with an Id (string), Value (string)
+/// Associates a required string identifier with a required string value.
 /// </summary>
 [PublicOpenApiObject]
 public record IdValuePair
 {
     /// <summary>
-    /// Gets or sets id.
+    /// Gets the identifier for the value.
     /// </summary>
     [Required]
     [JsonPropertyName("id")]
@@ -20,7 +20,7 @@ public record IdValuePair
     public required string Id { get; init; } = null!;
 
     /// <summary>
-    /// Gets or sets value.
+    /// Gets the value associated with <see cref="Id"/>.
     /// </summary>
     [Required]
     [JsonPropertyName("value")]

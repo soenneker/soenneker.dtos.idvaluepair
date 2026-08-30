@@ -5,7 +5,7 @@
 
 # Soenneker.Dtos.IdValuePair
 
-A minimal Record type with an Id (string), Value (string).
+A compact DTO for associating a string identifier with a string value. It is useful at API boundaries where a dictionary-shaped payload would be inconvenient or ambiguous.
 
 ## Install
 
@@ -13,13 +13,25 @@ A minimal Record type with an Id (string), Value (string).
 dotnet add package Soenneker.Dtos.IdValuePair
 ```
 
-## What you get
+## Usage
 
-- `IdValuePair` — A minimal Record type with an Id (string), Value (string).
+```csharp
+using Soenneker.Dtos.IdValuePair;
 
-## API at a glance
+var selection = new IdValuePair
+{
+    Id = "plan-42",
+    Value = "Professional"
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `IdValuePair.Id` | Gets or sets id. | Gets or sets id. |
-| `IdValuePair.Value` | Gets or sets value. | Gets or sets value. |
+The JSON property names are `id` and `value` with both `System.Text.Json` and Newtonsoft.Json. Both properties are required during object initialization and are init-only after construction.
+
+```json
+{
+  "id": "plan-42",
+  "value": "Professional"
+}
+```
+
+`[Required]` supplies validation metadata; it does not automatically run validation when an instance is created.
