@@ -25,7 +25,7 @@ var selection = new IdValuePair
 };
 ```
 
-The JSON property names are `id` and `value` with both `System.Text.Json` and Newtonsoft.Json. Both properties are required during object initialization and are init-only after construction.
+The JSON property names are `id` and `value` with `System.Text.Json`. Both properties are required during object initialization and are init-only after construction.
 
 ```json
 {
